@@ -15,7 +15,7 @@ public class Transfusion {
         // URL of the MySQL database
         String url = "jdbc:mysql://localhost:3306/transfusion";
         String username = "root";
-        String password = "787898";
+        String password = "root";
 
         try {
             // Load the JDBC driver
