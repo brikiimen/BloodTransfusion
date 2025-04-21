@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" >
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="46"/>
+	<parameter name="idp" class="java.lang.String">
+		<defaultValueExpression><![CDATA[12]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\lenovo\\Documents\\NetBeansProjects\\Transfusion\\src\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ep" class="java.lang.String">
+		<defaultValueExpression><![CDATA[5656]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     userlogin.`id` AS userlogin_id,
+     userlogin.`motdepasse` AS userlogin_motdepasse,
+     userlogin.`nom` AS userlogin_nom,
+     userlogin.`prenom` AS userlogin_prenom,
+     userlogin.`departement` AS userlogin_departement,
+     userlogin.`service` AS userlogin_service,
+     patient.`id` AS patient_id,
+     patient.`nom` AS patient_nom,
+     patient.`prenom` AS patient_prenom,
+     patient.`datenes` AS patient_datenes,
+     patient.`sexe` AS patient_sexe,
+     checkp.`prescription` AS checkp_prescription,
+     checkp.`psl` AS checkp_psl,
+     checkp.`nfs` AS checkp_nfs,
+     checkp.`gs` AS checkp_gs,
+     checkp.`phenotype` AS checkp_phenotype,
+     checkp.`conditionstransport` AS checkp_conditionstransport,
+     checkp.`bondonneur` AS checkp_bondonneur,
+     checkp.`concordanceidentite` AS checkp_concordanceidentite,
+     checkp.`concordanceformulaire` AS checkp_concordanceformulaire,
+     checkp.`groupepsl` AS checkp_groupepsl,
+     checkp.`dateverifie` AS checkp_dateverifie,
+     checkp.`date` AS checkp_date,
+     checkp.`produitsanguin` AS checkp_produitsanguin,
+     checkp.`observations` AS checkp_observations,
+     checkp.`resultatcross` AS checkp_resultatcross,
+     checkp.`patientinforme` AS checkp_patientinforme,
+     checkp.`verificationidentite` AS checkp_verificationidentite,
+     checkp.`poulepre` AS checkp_poulepre,
+     checkp.`voieveineuse` AS checkp_voieveineuse,
+     checkp.`testultime` AS checkp_testultime,
+     checkp.`tapre` AS checkp_tapre,
+     checkp.`tpre` AS checkp_tpre,
+     checkp.`resultatsurveillance` AS checkp_resultatsurveillance,
+     checkp.`ras` AS checkp_ras,
+     checkp.`intolerance` AS checkp_intolerance,
+     checkp.`controlenfs` AS checkp_controlenfs,
+     checkp.`resultat` AS checkp_resultat,
+     checkp.`tracabilite` AS checkp_tracabilite,
+     checkp.`poulspost` AS checkp_poulspost,
+     checkp.`tapost` AS checkp_tapost,
+     checkp.`tpost` AS checkp_tpost,
+     checkp.`etatconscience` AS checkp_etatconscience,
+     checkp.`idpatient` AS checkp_idpatient,
+     checkp.`episode` AS checkp_episode
+FROM
+     `userlogin` userlogin,
+     `patient` patient,
+     `checkp` checkp
+WHERE
+     patient.`id` = $P{idp}
+     and checkp.`idpatient` = $P{idp}
+     and checkp.`episode` = $P{ep}]]>
+	</queryString>
+	<field name="userlogin_id" class="java.lang.String"/>
+	<field name="userlogin_motdepasse" class="java.lang.String"/>
+	<field name="userlogin_nom" class="java.lang.String"/>
+	<field name="userlogin_prenom" class="java.lang.String"/>
+	<field name="userlogin_departement" class="java.lang.String"/>
+	<field name="userlogin_service" class="java.lang.String"/>
+	<field name="patient_id" class="java.lang.String"/>
+	<field name="patient_nom" class="java.lang.String"/>
+	<field name="patient_prenom" class="java.lang.String"/>
+	<field name="patient_datenes" class="java.lang.String"/>
+	<field name="patient_sexe" class="java.lang.String"/>
+	<field name="checkp_prescription" class="java.lang.String"/>
+	<field name="checkp_psl" class="java.lang.String"/>
+	<field name="checkp_nfs" class="java.lang.String"/>
+	<field name="checkp_gs" class="java.lang.String"/>
+	<field name="checkp_phenotype" class="java.lang.String"/>
+	<field name="checkp_conditionstransport" class="java.lang.String"/>
+	<field name="checkp_bondonneur" class="java.lang.String"/>
+	<field name="checkp_concordanceidentite" class="java.lang.String"/>
+	<field name="checkp_concordanceformulaire" class="java.lang.String"/>
+	<field name="checkp_groupepsl" class="java.lang.String"/>
+	<field name="checkp_dateverifie" class="java.lang.String"/>
+	<field name="checkp_date" class="java.lang.String"/>
+	<field name="checkp_produitsanguin" class="java.lang.String"/>
+	<field name="checkp_observations" class="java.lang.String"/>
+	<field name="checkp_resultatcross" class="java.lang.String"/>
+	<field name="checkp_patientinforme" class="java.lang.String"/>
+	<field name="checkp_verificationidentite" class="java.lang.String"/>
+	<field name="checkp_poulepre" class="java.lang.String"/>
+	<field name="checkp_voieveineuse" class="java.lang.String"/>
+	<field name="checkp_testultime" class="java.lang.String"/>
+	<field name="checkp_tapre" class="java.lang.String"/>
+	<field name="checkp_tpre" class="java.lang.String"/>
+	<field name="checkp_resultatsurveillance" class="java.lang.String"/>
+	<field name="checkp_ras" class="java.lang.String"/>
+	<field name="checkp_intolerance" class="java.lang.String"/>
+	<field name="checkp_controlenfs" class="java.lang.String"/>
+	<field name="checkp_resultat" class="java.lang.String"/>
+	<field name="checkp_tracabilite" class="java.lang.String"/>
+	<field name="checkp_poulspost" class="java.lang.String"/>
+	<field name="checkp_tapost" class="java.lang.String"/>
+	<field name="checkp_tpost" class="java.lang.String"/>
+	<field name="checkp_etatconscience" class="java.lang.String"/>
+	<field name="checkp_idpatient" class="java.lang.String"/>
+	<field name="checkp_episode" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="84" splitType="Stretch">
+			<staticText>
+				<reportElement x="33" y="-20" width="482" height="20" />
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROTOCOLES DE SECURITE TRANSFUSIONNELLE ET HEMOVIGILANCE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="17" width="146" height="20" />
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IDENTITEE du PATIENT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="217" y="37" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Nom  & Prénom  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="57" width="109" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Date de Naissance :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="37" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Matricule :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="217" y="57" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Sexe :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="61" y="37" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{patient_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="109" y="57" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{patient_datenes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="312" y="37" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{patient_nom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="382" y="37" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{patient_prenom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="57" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{patient_sexe}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="174" splitType="Stretch">
+			<staticText>
+				<reportElement x="150" y="0" width="257" height="20" />
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Check_list de contrôle du dossier transfusionnel ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="32" width="301" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Prescription médicale datée et signée par le médecin ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="52" width="100" height="20"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Demande du PSL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="72" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Copie NFS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="92" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[GS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="112" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Phénotype ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="132" width="165" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Conditions de transport respectées]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="152" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Bon du donneur récupéré]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="301" y="32" width="147" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_prescription}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="52" width="147" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_psl}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="72" width="100" height="20"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_nfs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="92" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_gs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="112" width="132" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_phenotype}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="132" width="147" height="20"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_conditionstransport}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="152" width="147" height="20"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_bondonneur}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="312" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="133" height="20" />
+				<textElement>
+					<font fontName="Arial" size="11" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[A la reception de sang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="401" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Concordance entre identité du patient et formulaire de demande]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="401" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Concordance entre formulaire de demande et poches de sang réceptionné]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Groupe du PSL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="80" width="197" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Date de péremption vérifiée]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="100" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="120" width="327" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Produit sanguin bien conservé (la couleur, l'aspect des PSL)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="140" width="84" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Observations :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="200" width="316" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Patient informé et consentement transfusionnel du patient signé ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="160" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial" size="11" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Pré-transfusion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="180" width="197" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Le résultat du cross match récupéré ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="220" width="191" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Vérification de l'identité du patient ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="280" width="121" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Test ultime au lit fait ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="252" y="240" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[TA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="240" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Etat du patient  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="127" y="240" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Pouls]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="260" width="227" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Voie veineuse ou périphérique perméable]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="382" y="240" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[T°]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="412" y="20" width="117" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_concordanceidentite}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="412" y="40" width="140" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_concordanceformulaire}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="60" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_groupepsl}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="412" y="80" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_dateverifie}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="97" y="100" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="412" y="120" width="150" height="20"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_produitsanguin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="84" y="140" width="193" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_observations}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="197" y="180" width="155" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_resultatcross}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="412" y="200" width="141" height="20"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_patientinforme}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="412" y="220" width="140" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_verificationidentite}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="161" y="240" width="72" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_poulepre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="277" y="240" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_tapre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="407" y="240" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_tpre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="412" y="260" width="128" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_voieveineuse}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="412" y="280" width="128" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_testultime}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="11" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="173" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="191" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="11" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Post-transfusion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="287" height="20"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Résultats de la surveillance (10 mn pendant la transfusion)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Résultats :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="100" height="20"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Contrôle NFS post transfusion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="80" width="100" height="20"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Résultats ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="100" width="165" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Traçabilité dans le registre transfusionnel ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="120" width="197" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Paramètres vitaux post transfusionnel :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="40" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[RAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="40" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Intolérance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="140" width="100" height="20"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Pouls]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="165" y="140" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[TA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="277" y="140" width="100" height="20"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[T°]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="363" y="140" width="105" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Etat de conscience ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="287" y="20" width="165" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_resultatsurveillance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="40" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_ras}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="40" width="132" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_intolerance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="287" y="80" width="134" height="20"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_controlenfs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="121" y="80" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_resultat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="287" y="100" width="151" height="20"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_tracabilite}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="65" y="140" width="85" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_poulspost}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="140" width="78" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_tapost}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="140" width="54" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_tpost}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="140" width="84" height="20" />
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{checkp_etatconscience}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="57" splitType="Stretch">
+			<staticText>
+				<reportElement x="65" y="7" width="100" height="20" />
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nom et prénom IDE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="387" y="7" width="100" height="20" />
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Signature]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="27" width="100" height="20" />
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{userlogin_nom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="27" width="129" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{userlogin_prenom}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="accord" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idp" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     patient_A.`id` AS patient_A_id,
+     patient_A.`nom` AS patient_A_nom,
+     patient_A.`prenom` AS patient_A_prenom,
+     patient_A.`datenes` AS patient_A_datenes,
+     patient_A.`sexe` AS patient_A_sexe
+FROM
+     `patient` patient_A
+where 
+    patient_A.`id`=$P{idp}]]>
+	</queryString>
+	<field name="patient_A_id" class="java.lang.String"/>
+	<field name="patient_A_nom" class="java.lang.String"/>
+	<field name="patient_A_prenom" class="java.lang.String"/>
+	<field name="patient_A_datenes" class="java.lang.String"/>
+	<field name="patient_A_sexe" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="28" width="555" height="51" />
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="24"/>
+				</textElement>
+				<text><![CDATA[الموافقة المستنيرة لنقل الدم و مشتقاته]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="17" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="462" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="15" width="529" height="395" />
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="15"/>
+				</textElement>
+				<text><![CDATA[وصف لك الطبيب المباشر إجراء لنقل الدم أو مشتقاته
+يتوجب إجراء نقل الدم لإستبدال جزء من دمك و ذلك
+لإستبدال خلايا الدم الحمراء للعلاجأو الوقاية من فقر الدم وذلك بتحسين نقل الدم الأكسجين و تخفيف أعراض الإغماءن و التعب أو ضيق التنفس
+لإعطاءك الصفائح الدموية للمساعدةفي وقف او معالجة أو منع نزيف
+لإعطائك منتج البلازمة الطازجة لوقف أو معالجة أو منع نزيف
+يتم نقل الدم عبر قنية(إبرة في الوريد) أو خط مركزي في الوريدنسيتم متابعتك و مراقبتك عن قرب أثناء عملية النقل لرصد فعل محتملة كما سيتم فحصك باإنتضام بخصوص ما إذا كنتم قد تحتاجون إلي نقل دم مرة أخرى
+ردود الفعل المستركة لنقل الدم أو مشتقاته هي :
+إرتفاع في درجة الحرارة الجسم
+طفح جلدي,أو حكة
+توعك
+المخاطر هي:
+إنحلال الدم
+نقل ضخم يسبب الحمل الزائد الرئوي مع ضيق في التنفس
+تطوير الأجسام المضادة التي قد تعقد عمليات نقل في المستقبل
+إنتشار الجراثيم الفيروسية المعدية أو غيرها من دم المتبرعين
+نادرا جدا, هذه التفاعلات يمكن أن تسبب أضرارا جسيمة
+الموافقة الطبية
+أشهد أن الطبيب .......................................................................قد أعطاني معلومات واضحة و مفصلة عن عملية نقل الدم و مشتقاته خلال المقابلة الشخصية.
+لقد فهمت التفسيرات المبنية وأعلن الموافقة علي نقل الدم
+]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="406" y="10" width="100" height="20" />
+				<textElement>
+					<font fontName="Arial" size="14" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[اسم و لقب المريض]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="10" width="100" height="20" />
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[الامضاء]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="369" y="30" width="100" height="20" />
+				<textFieldExpression><![CDATA[$F{patient_A_nom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="30" width="100" height="20" />
+				<textFieldExpression><![CDATA[$F{patient_A_prenom}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
